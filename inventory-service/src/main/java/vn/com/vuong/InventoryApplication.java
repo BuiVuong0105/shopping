@@ -2,11 +2,7 @@ package vn.com.vuong;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
-import vn.com.vuong.filter.CorsFilter;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "vn.com.vuong.repository", 
@@ -17,12 +13,12 @@ public class InventoryApplication {
 		SpringApplication.run(InventoryApplication.class, args);
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@Bean
-	public FilterRegistrationBean filterRegistrationBean() {
-		FilterRegistrationBean registration = new FilterRegistrationBean(new CorsFilter());
-		registration.addUrlPatterns("/*");
-		registration.setOrder(1);
-		return registration;
-	}
+//	@SuppressWarnings({ "rawtypes", "unchecked" })
+//	@Bean
+//	public FilterRegistrationBean filterRegistrationBean() {
+//		FilterRegistrationBean registration = new FilterRegistrationBean(new CorsFilter());
+//		registration.addUrlPatterns("/*");
+//		registration.setOrder(1);
+//		return registration;
+//	}
 }

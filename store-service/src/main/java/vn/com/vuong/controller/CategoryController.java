@@ -135,7 +135,7 @@ public class CategoryController {
 	}
 	
 	@DeleteMapping(value = "/category/{id}")
-	public ResponseEntity<?> delete(@PathVariable("") Long id ) {
+	public ResponseEntity<?> delete(@PathVariable("id") Long id ) {
 		Optional<Category> optionalCategory = categoryService.findById(id);
 		Category categoryFindId = optionalCategory.orElseThrow(() -> new ApplicationException(HTTPErrorCode.NOT_FOUND));
 		try {
